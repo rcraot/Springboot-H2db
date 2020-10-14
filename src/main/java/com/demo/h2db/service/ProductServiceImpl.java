@@ -57,7 +57,7 @@ public class ProductServiceImpl implements ProductService {
 			this.repository.save(productUpdate);
 			return productUpdate;
 		} else {
-			throw new ProductNotFoundException("Record not found with id.", product.getId());
+			throw new ProductNotFoundException("Product not found with id.", product.getId());
 		}
 	}
 
@@ -75,7 +75,7 @@ public class ProductServiceImpl implements ProductService {
 		if (product.isPresent()) {
 			return product.get();
 		} else {
-			throw new ProductNotFoundException("Record not found with id.", id);
+			throw new ProductNotFoundException("Product not found with id.", id);
 		}
 
 	}
@@ -92,7 +92,7 @@ public class ProductServiceImpl implements ProductService {
 		if (productDb.isPresent()) {
 			this.repository.delete(productDb.get());
 		} else {
-			throw new ProductNotFoundException("Record not found with id.", id);
+			throw new ProductNotFoundException("Product not found with id.", id);
 		}
 	}
 
